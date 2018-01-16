@@ -17,7 +17,7 @@ final class DataManager {
         email = keychain.get("email")
     }
     private(set) var allMemes: [Meme] = []
-     var favoriteMemes: [Meme] = []
+     private(set) var favoriteMemes: [Meme] = []
     private(set) var email: String?
     
     let keychain = KeychainSwift()

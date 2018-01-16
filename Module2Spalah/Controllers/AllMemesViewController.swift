@@ -16,6 +16,7 @@ class AllMemesViewController: UICollectionViewController, Alertable {
         title = "All Memes"
         addObservers()
         loadMemes()
+        
         collectionView?.register(MemeCollectionCell.nib, forCellWithReuseIdentifier: MemeCollectionCell.reuseID)
     }
     
