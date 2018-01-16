@@ -24,34 +24,6 @@ final class DataManager {
     
     // MARK: - Private methods
     
-    func saveFavoriteMemes(for user: String) {
-        var documentsUrl = Utils.pathInDocument(with: user)
-        if !FileManager.default.fileExists(atPath: documentsUrl.path) {
-            do {
-                try FileManager.default.createDirectory(at: documentsUrl, withIntermediateDirectories: true)
-                print("Directory \(documentsUrl) was created")
-            } catch {
-                print("Directory wasnt created")
-            }
-        }
-        
-        documentsUrl.appendPathComponent(Utils.fileName)
-        (favoriteMemes as NSArray).write(to: documentsUrl, atomically: true)
-        print("File was saved")
-    }
-    
-    func loadFavoriteMemes(for user: String) {
-        
-        var pathToLoad = Utils.pathInDocument(with: user)
-        pathToLoad.appendPathComponent(Utils.fileName)
-        guard let arrayToLoad = NSArray(contentsOf: pathToLoad) as? [Meme] else {print( "failed"); return}
-        setFavoriteMemesArray(with: arrayToLoad)
-    }
-    
-    func setFavoriteMemesArray(with array: [Meme]) {
-        favoriteMemes.removeAll()
-        favoriteMemes = array
-    }
     private func  postNotificationInMain(withName name: Notification.Name, userInfo: [AnyHashable: Any]? = nil) {
         DispatchQueue.main.async {
             NotificationCenter.default.post(name: name, object: nil, userInfo: userInfo)
@@ -93,13 +65,42 @@ final class DataManager {
         NotificationCenter.default.post(name: .MemeAdded, object: nil)
     }
     
+    func saveFavoriteMemes(meme: Meme) {
+        guard let email = email else { return }
+        favoriteMemes.append(meme)
+        var documentsUrl = Utils.pathInDocument(with: email)
+        if !FileManager.default.fileExists(atPath: documentsUrl.path) {
+            do {
+                try FileManager.default.createDirectory(at: documentsUrl, withIntermediateDirectories: true)
+                print("Directory \(documentsUrl.path) was created")
+            } catch {
+                print("Directory was not created")
+            }
+        }
+        documentsUrl.appendPathComponent(Utils.fileName)
+        NSKeyedArchiver.archiveRootObject(self.favoriteMemes, toFile: documentsUrl.path)
+        NotificationCenter.default.post(name: .MemeAdded, object: nil)
+    }
+    
+    func loadFavoriteMemes() {
+        guard let email = email else { return }
+        var pathToLoad = Utils.pathInDocument(with: email)
+        pathToLoad.appendPathComponent(Utils.fileName)
+        if let data = NSKeyedUnarchiver.unarchiveObject(withFile: pathToLoad.path) as? [Meme] {
+            self.favoriteMemes = data
+        }
+    }
+    
     func deleteMeme(meme: Meme) {
         guard !favoriteMemes.isEmpty else { return }
         guard let index = getIndex(of: meme, in: favoriteMemes) else { return }
         favoriteMemes.remove(at: index)
+        guard let email = email else { return }
+        var documentsUrl = Utils.pathInDocument(with: email)
+        documentsUrl.appendPathComponent(Utils.fileName)
+        NSKeyedArchiver.archiveRootObject(self.favoriteMemes, toFile: documentsUrl.path)
         NotificationCenter.default.post(name: .MemeDeleted, object: nil)
     }
-    
     // MARK: - Keychain
     
     func setEmail(email: String) {
@@ -110,6 +111,7 @@ final class DataManager {
     func logout() {
         keychain.delete("email")
         self.email = nil
+        self.favoriteMemes = []
     }
 }
 

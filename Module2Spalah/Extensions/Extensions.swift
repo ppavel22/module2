@@ -18,7 +18,7 @@ extension Notification.Name {
 }
 
 extension HUD {
-    static func showProgress(hideTimeout: TimeInterval = 10) {
+    static func showProgress(hideTimeout: TimeInterval = 30) {
         self.show(.progress)
         self.hide(afterDelay: hideTimeout)
     }

@@ -14,8 +14,7 @@ class FavoriteMemeViewController: UICollectionViewController {
         super.viewDidLoad()
         title = "Favorites"
         collectionView?.register(MemeCollectionCell.nib, forCellWithReuseIdentifier: MemeCollectionCell.reuseID)
-        guard let emailToLoad = DataManager.instance.email else { return }
-        DataManager.instance.loadFavoriteMemes(for: emailToLoad)
+        DataManager.instance.loadFavoriteMemes()
         addObservers()
     }
     
