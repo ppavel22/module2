@@ -18,13 +18,13 @@
 		041406AA200D0B20002EF354 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041406A9200D0B20002EF354 /* DetailsViewController.swift */; };
 		041406AC200D0B39002EF354 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041406AB200D0B39002EF354 /* DataManager.swift */; };
 		041406AE200D0B43002EF354 /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041406AD200D0B43002EF354 /* Meme.swift */; };
-		0426111C200E4A73004B1A15 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0426111B200E4A73004B1A15 /* Utils.swift */; };
 		044CEEAB200D766D000B21F4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CEEAA200D766D000B21F4 /* Extensions.swift */; };
 		044CEEAE200D77C6000B21F4 /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CEEAD200D77C6000B21F4 /* Alertable.swift */; };
 		044CEEB0200D77D7000B21F4 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CEEAF200D77D7000B21F4 /* Endpoint.swift */; };
 		044CEEB2200D77E7000B21F4 /* MemesEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CEEB1200D77E7000B21F4 /* MemesEndpoint.swift */; };
 		044CEEB5200D79C3000B21F4 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CEEB4200D79C3000B21F4 /* NetworkService.swift */; };
 		044CEEB7200D7C37000B21F4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CEEB6200D7C37000B21F4 /* LoginViewController.swift */; };
+		04C71A40200E6C1600A8EC0D /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C71A3F200E6C1600A8EC0D /* Utils.swift */; };
 		8D828FEF5DF0A04821B6F052 /* Pods_Module2Spalah.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D93E8956DBA65E40736FCE17 /* Pods_Module2Spalah.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,13 +42,13 @@
 		041406A9200D0B20002EF354 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		041406AB200D0B39002EF354 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		041406AD200D0B43002EF354 /* Meme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
-		0426111B200E4A73004B1A15 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		044CEEAA200D766D000B21F4 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		044CEEAD200D77C6000B21F4 /* Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
 		044CEEAF200D77D7000B21F4 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		044CEEB1200D77E7000B21F4 /* MemesEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemesEndpoint.swift; sourceTree = "<group>"; };
 		044CEEB4200D79C3000B21F4 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		044CEEB6200D7C37000B21F4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		04C71A3F200E6C1600A8EC0D /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		07BC6120758DC0D1F4F9E22A /* Pods-Module2Spalah.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Module2Spalah.release.xcconfig"; path = "Pods/Target Support Files/Pods-Module2Spalah/Pods-Module2Spalah.release.xcconfig"; sourceTree = "<group>"; };
 		0ACA088861CB2C84492CB2EA /* Pods-Module2Spalah.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Module2Spalah.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Module2Spalah/Pods-Module2Spalah.debug.xcconfig"; sourceTree = "<group>"; };
 		D93E8956DBA65E40736FCE17 /* Pods_Module2Spalah.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Module2Spalah.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,8 +69,8 @@
 		0414067D200CF588002EF354 = {
 			isa = PBXGroup;
 			children = (
+				04C71A3E200E6BEB00A8EC0D /* Utils */,
 				04140688200CF588002EF354 /* Module2Spalah */,
-				0426111A200E4A3C004B1A15 /* Utils */,
 				04140687200CF588002EF354 /* Products */,
 				562BE827528F3B1D2BA8E170 /* Pods */,
 				3FF300855BAE36DA8A363E84 /* Frameworks */,
@@ -88,12 +88,15 @@
 		04140688200CF588002EF354 /* Module2Spalah */ = {
 			isa = PBXGroup;
 			children = (
+				04140695200CF588002EF354 /* Info.plist */,
+				04140689200CF588002EF354 /* AppDelegate.swift */,
+				04140690200CF588002EF354 /* Assets.xcassets */,
+				04140692200CF588002EF354 /* LaunchScreen.storyboard */,
 				044CEEAC200D77AB000B21F4 /* Protocols */,
 				0414069F200CFE48002EF354 /* Extensions */,
 				0414069C200CFE27002EF354 /* Models */,
 				0414069E200CFE38002EF354 /* Views */,
 				0414069D200CFE30002EF354 /* Controllers */,
-				04261119200E3637004B1A15 /* SupportingFiles */,
 			);
 			path = Module2Spalah;
 			sourceTree = "<group>";
@@ -101,9 +104,9 @@
 		0414069C200CFE27002EF354 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				044CEEB3200D7964000B21F4 /* Network */,
 				041406AB200D0B39002EF354 /* DataManager.swift */,
 				041406AD200D0B43002EF354 /* Meme.swift */,
+				044CEEB3200D7964000B21F4 /* Network */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -137,26 +140,6 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		04261119200E3637004B1A15 /* SupportingFiles */ = {
-			isa = PBXGroup;
-			children = (
-				04140689200CF588002EF354 /* AppDelegate.swift */,
-				04140690200CF588002EF354 /* Assets.xcassets */,
-				04140692200CF588002EF354 /* LaunchScreen.storyboard */,
-				04140695200CF588002EF354 /* Info.plist */,
-			);
-			name = SupportingFiles;
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		0426111A200E4A3C004B1A15 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				0426111B200E4A73004B1A15 /* Utils.swift */,
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
 		044CEEAC200D77AB000B21F4 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +156,14 @@
 				044CEEB4200D79C3000B21F4 /* NetworkService.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		04C71A3E200E6BEB00A8EC0D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				04C71A3F200E6C1600A8EC0D /* Utils.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		3FF300855BAE36DA8A363E84 /* Frameworks */ = {
@@ -333,7 +324,7 @@
 				044CEEAE200D77C6000B21F4 /* Alertable.swift in Sources */,
 				0414068A200CF588002EF354 /* AppDelegate.swift in Sources */,
 				041406AC200D0B39002EF354 /* DataManager.swift in Sources */,
-				0426111C200E4A73004B1A15 /* Utils.swift in Sources */,
+				04C71A40200E6C1600A8EC0D /* Utils.swift in Sources */,
 				041406AE200D0B43002EF354 /* Meme.swift in Sources */,
 				044CEEB0200D77D7000B21F4 /* Endpoint.swift in Sources */,
 				044CEEAB200D766D000B21F4 /* Extensions.swift in Sources */,
@@ -482,7 +473,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Module2Spalah/Info.plist;
+				DEVELOPMENT_TEAM = PESA62X2P7;
+				INFOPLIST_FILE = "$(SRCROOT)/Module2Spalah/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "pavel-chekalkin.Module2Spalah";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -497,7 +489,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Module2Spalah/Info.plist;
+				DEVELOPMENT_TEAM = PESA62X2P7;
+				INFOPLIST_FILE = "$(SRCROOT)/Module2Spalah/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "pavel-chekalkin.Module2Spalah";
 				PRODUCT_NAME = "$(TARGET_NAME)";

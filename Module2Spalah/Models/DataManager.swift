@@ -17,14 +17,41 @@ final class DataManager {
         email = keychain.get("email")
     }
     private(set) var allMemes: [Meme] = []
-     private(set) var favoriteMemes: [Meme] = []
+    private(set) var favoriteMemes: [Meme] = []
     private(set) var email: String?
     
     let keychain = KeychainSwift()
     
     // MARK: - Private methods
     
+    func saveFavoriteMemes(for user: String) {
+        var documentsUrl = Utils.pathInDocument(with: user)
+        if !FileManager.default.fileExists(atPath: documentsUrl.path) {
+            do {
+                try FileManager.default.createDirectory(at: documentsUrl, withIntermediateDirectories: true)
+                print("Directory \(documentsUrl) was created")
+            } catch {
+                print("Directory wasnt created")
+            }
+        }
+        
+        documentsUrl.appendPathComponent(Utils.fileName)
+        (favoriteMemes as NSArray).write(to: documentsUrl, atomically: true)
+        print("File was saved")
+    }
     
+    func loadFavoriteMemes(for user: String) {
+        
+        var pathToLoad = Utils.pathInDocument(with: user)
+        pathToLoad.appendPathComponent(Utils.fileName)
+        guard let arrayToLoad = NSArray(contentsOf: pathToLoad) as? [Meme] else {print( "failed"); return}
+        setFavoriteMemesArray(with: arrayToLoad)
+    }
+    
+    func setFavoriteMemesArray(with array: [Meme]) {
+        favoriteMemes.removeAll()
+        favoriteMemes = array
+    }
     private func  postNotificationInMain(withName name: Notification.Name, userInfo: [AnyHashable: Any]? = nil) {
         DispatchQueue.main.async {
             NotificationCenter.default.post(name: name, object: nil, userInfo: userInfo)
